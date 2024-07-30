@@ -1,7 +1,5 @@
-const fetchOptions = {
+export default {
   next: {
     revalidate: 10
   }
 }
-
-export default fetchOptions
