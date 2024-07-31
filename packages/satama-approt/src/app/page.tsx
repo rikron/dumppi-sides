@@ -70,7 +70,14 @@ const Home = async () => {
           case 'heroSection':
             return wrapDiv(<HeroSection content={content} />, content._key)
           case 'contactSection':
-            return wrapDiv(<ContactSection content={content} />, content._key)
+            return wrapDiv(
+              <ContactSection
+                content={content}
+                instagram={page.instagram}
+                commonEmail={page.mainEmail}
+              />,
+              content._key
+            )
         }
       })}
       <div>footer</div>
