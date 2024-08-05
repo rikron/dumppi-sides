@@ -10,6 +10,7 @@ import {
   TextSection,
   HeroSection
 } from './components/sections'
+import Footer from './components/Footer'
 import { BannerSection as BannerSectionType } from 'types'
 import { ReactElement } from 'react'
 
@@ -33,6 +34,9 @@ export async function generateMetadata(
 
 const Home = async () => {
   const page: any = await sanityClient.fetch(PAGE)
+  const year = page.eventDate
+    ? new Date(page.eventDate).getFullYear()
+    : undefined
   // TODO Urls for desktop and mobile
   return (
     <div className="h-full">
@@ -44,7 +48,10 @@ const Home = async () => {
           className="md:hidden h-screen w-full object-cover"
           src={`${page.bannerUrlMobile}?fm=webp`}
         />
-        <img className="md:inline hidden" src={`${page.bannerUrlDesktop}`} />
+        <img
+          className="md:inline hidden"
+          src={`${page.bannerUrlDesktop}?fm=webp`}
+        />
       </div>
       {page.content.map((content: any, index: number) => {
         const isOdd = index % 2 === 1
@@ -80,7 +87,7 @@ const Home = async () => {
             )
         }
       })}
-      <div>footer</div>
+      <Footer year={year} color={page.contrastColor} />
     </div>
   )
 }

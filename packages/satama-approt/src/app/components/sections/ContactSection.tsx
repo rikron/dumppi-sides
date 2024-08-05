@@ -10,12 +10,15 @@ type Props = {
 }
 
 const ContactSection = ({ content, commonEmail, instagram }: Props) => {
+  console.log(content.header.fi[0])
+  const hasHeader =
+    content.header !== undefined && content.header.fi[0].children[0].text !== ''
   return (
     <div className="p-4 text-center w-full flex flex-col items-center">
       <div className="py-12">
         <TitleLarge>Ota Yhteyttä</TitleLarge>
       </div>
-      {content.header && (
+      {hasHeader && (
         <div className="py-6">
           <PortableText content={content.header.fi} />
         </div>
@@ -28,7 +31,7 @@ const ContactSection = ({ content, commonEmail, instagram }: Props) => {
       >
         {content.content.map((contact: any, index: number) => {
           const rightPadding =
-            index % 2 === 0 ? 'pr-0 pb-12 lg:pb-0 lg:pr-12' : ''
+            index % 2 === 0 && index !== 0 ? 'pr-0 pb-12 lg:pb-0 lg:pr-12' : ''
           return (
             <div key={index} className={rightPadding}>
               <ContactCard

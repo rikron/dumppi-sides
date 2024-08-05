@@ -8,7 +8,7 @@ type props = {
 const TextSection = ({ content }: props) => {
   return (
     <div className="p-4 text-center w-full flex flex-col items-center">
-      <div className="py-12">
+      <div className="py-12 md:w-3/4 xl:w-1/2  w-full">
         <TitleLarge>{content.title.fi}</TitleLarge>
       </div>
       <div
@@ -18,14 +18,13 @@ const TextSection = ({ content }: props) => {
               ? 'flex-col'
               : 'flex-col lg:flex-row md:items-start'
           }
-          md:w-3/4 xl:w-1/2  w-full justify-center items-center text-left
+          md:w-3/4 xl:w-1/2  w-full justify-center items-center text-left pb-12
         `}
       >
         {content.content.map((block: any, index: number) => {
-          const isNotLast = content.content.length - 1 != index
           return (
-            <div key={index} className="flex-1 pb-12">
-              <div className={isNotLast ? 'pr-4' : ''}>
+            <div key={index} className="flex-1">
+              <div className="px-6">
                 <PortableText content={block.content.fi} />
               </div>
             </div>

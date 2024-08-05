@@ -4,16 +4,17 @@ type props = {
   content: BannerSectionType
 }
 const BannerSection = ({ content }: props) => {
+  const mobileUrl = content.bannerUrlMobile
+    ? `${content.bannerUrlMobile}?fm=webp`
+    : undefined
+  const desktopUrl = content.bannerUrlDesktop
+    ? `${content.bannerUrlDesktop}?fm=webp`
+    : undefined
+
   return (
     <div>
-      <img
-        className="md:hidden"
-        src={content.bannerUrlMobile ?? content.bannerUrlDesktop}
-      />
-      <img
-        className="hidden md:inline"
-        src={content.bannerUrlDesktop ?? content.bannerUrlMobile}
-      />
+      <img className="md:hidden" src={mobileUrl ?? desktopUrl} />
+      <img className="hidden md:inline" src={desktopUrl ?? mobileUrl} />
     </div>
   )
 }
