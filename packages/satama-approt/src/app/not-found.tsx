@@ -1,15 +1,15 @@
 import Image from 'next/image'
-import { TitleMedium, TitleSmall } from './components/text'
-import Navbar from './components/navbar'
+import { TitleMedium, TitleSmall } from '../components/text'
 import sanityClient from 'sanityClient'
 import { PAGE } from 'queries'
 
 const EmptyDock404 = async () => {
-  const page: any = await sanityClient.fetch(PAGE)
+  //const page: any = await sanityClient.fetch(PAGE)
 
   return (
+    //style={{ backgroundColor: page.contrastColor, color: '#ffffff' }}
     <div
-      style={{ backgroundColor: page.contrastColor, color: '#ffffff' }}
+      style={{ backgroundColor: '#2f5e91', color: '#ffffff' }}
       className="flex flex-col items-center justify-center text-center h-screen"
     >
       <div className="py-12">

@@ -10,7 +10,6 @@ type Props = {
 }
 
 const ContactSection = ({ content, commonEmail, instagram }: Props) => {
-  console.log(content.header.fi[0])
   const hasHeader =
     content.header !== undefined && content.header.fi[0].children[0].text !== ''
   return (

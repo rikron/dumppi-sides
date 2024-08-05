@@ -18,7 +18,7 @@ const Navbar = ({ sections }: Props) => {
         }
       })
     )
-  }, [])
+  }, [sections])
 
   return (
     <div className="bg-white text-black fixed w-full flex flex-row justify-evenly md:justify-center items-center">

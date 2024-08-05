@@ -1,4 +1,5 @@
 import { BannerSection as BannerSectionType } from 'types'
+import Image from 'next/image'
 
 type props = {
   content: BannerSectionType
@@ -13,8 +14,21 @@ const BannerSection = ({ content }: props) => {
 
   return (
     <div>
-      <img className="md:hidden" src={mobileUrl ?? desktopUrl} />
-      <img className="hidden md:inline" src={desktopUrl ?? mobileUrl} />
+      <Image
+        className="md:hidden"
+        src={mobileUrl ?? desktopUrl!}
+        height={800}
+        width={500}
+        alt="Banner"
+        style={{ objectFit: 'cover' }}
+      />
+      <Image
+        className="hidden md:inline w-full"
+        src={desktopUrl ?? mobileUrl!}
+        alt="Banner"
+        height={800}
+        width={500}
+      />
     </div>
   )
 }

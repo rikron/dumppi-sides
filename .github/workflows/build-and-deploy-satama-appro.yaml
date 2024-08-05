@@ -31,7 +31,7 @@ jobs:
       - name: Publish
         uses: Dumppiry/netlify-actions/cli@master
         with:
-          args: deploy --dir=packages/satama-approt/dist --filter packages/satama-approt --prod
+          args: deploy --dir=packages/satama-approt/out --filter packages/satama-approt --prod
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SATAMA_APPRO_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_SATAMA_APPRO_AUTH_TOKEN }}
