@@ -25,7 +25,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: corepack enable
       - run: yarn --immutable
-      - run: yarn workspace packages/satama-approt build
+      - run: yarn workspace satama-approt build
         env:
           NODE_OPTIONS: '--max-old-space-size=8192'
       - name: Publish
