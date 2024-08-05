@@ -3,7 +3,7 @@ name: Build and Deploy satama-appro.fi to Netlify
 on:
   repository_dispatch:
     types:
-      - build-and-deploy-web
+      - build-and-deploy-satama-appro
   push:
     branches:
       - 'main'
