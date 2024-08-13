@@ -37,7 +37,10 @@ const Page = async () => {
         query:
           "*[_type == 'page' && project=='satama-appro' && _id=='satamaApproPage'][0] {...,'bannerUrlMobile': bannerMobile.asset -> url,'bannerUrlDesktop': banner.asset -> url,'content': content[]{...,_type=='bannerSection' => {'bannerUrlMobile': bannerMobile.asset -> url,'bannerUrlDesktop': bannerDesktop.asset -> url,},_type=='contactSection' => {...,'content': content[] ->}}}",
         params: {}
-      })
+      }),
+      next: {
+        revalidate: 5
+      }
     }
   )
   if (!response.ok) {
@@ -54,6 +57,8 @@ const Page = async () => {
     <div className="h-full">
       <Navbar
         sections={page.content.filter((section: any) => section.navTitle)}
+        ticketUrl={page.ticketUrl}
+        saleStart={new Date(page.ticketSaleStart)}
       />
       <div className="h-full overflow-hidden">
         <Image
