@@ -30,7 +30,6 @@ const Page = async () => {
     {
       method: 'POST',
       headers: {
-        Authorization: `Bearer ${process.env.SANITY_READ_TOKEN}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({

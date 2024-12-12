@@ -10,9 +10,6 @@ on:
     paths:
       - 'satama-approt/**'
 
-env:
-  SANITY_READ_TOKEN: ${{ secrets.SANITY_READ_TOKEN }}
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
