@@ -1,0 +1,33 @@
+name: Build and Deploy vappuappro.fi to Netlify
+
+on:
+  repository_dispatch:
+    types:
+      - build-and-deploy-vappuappro
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'vappuapprot/**'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+      - run: corepack enable
+      - run: yarn --immutable
+      - run: yarn workspace vappuapprot build
+        env:
+          NODE_OPTIONS: '--max-old-space-size=8192'
+      - name: Publish
+        uses: Dumppiry/netlify-actions/cli@master
+        with:
+          args: deploy --dir=packages/vappuapprot/out --filter packages/vappuapprot --prod
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_VAPPUAPPRO_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_VAPPUAPPRO_AUTH_TOKEN }}

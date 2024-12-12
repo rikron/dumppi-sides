@@ -4477,6 +4477,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vappuapprot@workspace:packages/vappuapprot":
+  version: 0.0.0-use.local
+  resolution: "vappuapprot@workspace:packages/vappuapprot"
+  dependencies:
+    "@types/node": ^20
+    "@types/react": ^18
+    "@types/react-dom": ^18
+    dotenv: ^16.4.5
+    eslint: ^8
+    eslint-config-next: 14.2.5
+    next: 14.2.5
+    next-sanity: ^9.4.3
+    postcss: ^8
+    prettier: 3.3.3
+    react: ^18
+    react-dom: ^18
+    react-icons: ^5.2.1
+    tailwindcss: ^3.4.1
+    typescript: ^5
+  languageName: unknown
+  linkType: soft
+
 "which-boxed-primitive@npm:^1.0.2":
   version: 1.0.2
   resolution: "which-boxed-primitive@npm:1.0.2"
