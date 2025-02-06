@@ -144,6 +144,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@microsoft/clarity@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@microsoft/clarity@npm:1.0.0"
+  checksum: 19c34070c69aafc6a26bfa3aa9a7909109fc2af59df3fec6c136851facbb0335fb5ff5d9909045266b0f3b24be40da28a47a8c2cad4008dd6a58e43d99ffdf30
+  languageName: node
+  linkType: hard
+
 "@next/env@npm:14.2.5":
   version: 14.2.5
   resolution: "@next/env@npm:14.2.5"
@@ -4481,6 +4488,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "vappuapprot@workspace:packages/vappuapprot"
   dependencies:
+    "@microsoft/clarity": ^1.0.0
     "@types/node": ^20
     "@types/react": ^18
     "@types/react-dom": ^18

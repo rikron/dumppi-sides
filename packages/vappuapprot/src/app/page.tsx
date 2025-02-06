@@ -14,6 +14,7 @@ import {
 import Footer from '../components/Footer'
 import { BannerSection as BannerSectionType } from 'types'
 import { ReactElement } from 'react'
+import Clarity from '@microsoft/clarity'
 
 const metaYear = new Date().getFullYear()
 export const metadata: Metadata = {

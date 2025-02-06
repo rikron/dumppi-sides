@@ -44,10 +44,12 @@ const ContactSection = ({ content, commonEmail, instagram }: Props) => {
       </div>
       <div className="pb-6 pt-4 border-t-2">
         <div className="pb-4">
-          <TitleMedium>Satama-Approt</TitleMedium>
+          <TitleMedium>Vappuapprot</TitleMedium>
         </div>
         <BodyMedium>
-          Ota yhteyttä meihin joko sähköpostilla tai instagramissa!
+          {'Ota yhteyttä meihin sähköpostilla' +
+            (instagram ? 'tai instagramissa' : '') +
+            '!'}
         </BodyMedium>
         {commonEmail && (
           <div className="pt-6 w-full">
