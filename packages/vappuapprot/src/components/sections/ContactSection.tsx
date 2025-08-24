@@ -56,7 +56,7 @@ const ContactSection = ({ content, commonEmail, instagram }: Props) => {
             <a
               className="cursor-pointer flex flex-row justify-center items-center pl-4 text-3xl text-blue-700 border-2 rounded-2xl p-2 border-blue-700 w-3/4 mx-auto"
               target="blank"
-              href={`mailto://${commonEmail}`}
+              href={`mailto:${commonEmail}`}
             >
               <FiMail className="cursor-pointer" size={40} />
               <label className="px-4 cursor-pointer">Sähköposti</label>
