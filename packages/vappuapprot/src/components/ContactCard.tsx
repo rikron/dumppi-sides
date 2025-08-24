@@ -13,7 +13,7 @@ const ContactCard = ({ title, name, email }: Props) => {
         <label>{title}</label>
       </div>
       <TitleMedium>{name}</TitleMedium>
-      <a className="text-blue-700" href={`mailto://${email}`}>
+      <a className="text-blue-700" href={`mailto:${email}`}>
         {email}
       </a>
     </div>
